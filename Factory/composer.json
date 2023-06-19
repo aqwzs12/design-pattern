@@ -1,0 +1,15 @@
+{
+    "name": "saad/factory",
+    "authors": [
+        {
+            "name": "saad",
+            "email": "slimasaad@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Factory\\": "src/"
+        }
+    }
+}
