@@ -4,8 +4,8 @@ namespace App\interfaces;
 
 interface ObservableInterface {
 
-    public function attach(ObserverInterface $observer): never;
-    public function detach(ObserverInterface $observer): never;
+    public function attach(ObserverInterface $observer);
+    public function detach(ObserverInterface $observer);
     public function notify();
 
 }

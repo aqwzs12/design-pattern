@@ -10,18 +10,17 @@ class ObservableConcrete implements ObservableInterface {
     private $observer = [];
     private $data;
     
-    public function attach(ObserverInterface $observer):never {
+    public function attach(ObserverInterface $observer): void {
         $this->observer[] = $observer;
     }
 
-    public function detach(ObserverInterface $observer): never {
-        $index = array_search($observer,$this->$observer);
-           if( $index !== FALSE) {
-            unset($this->observer[$index]);
-           } 
+    public function detach(ObserverInterface $observer): void {
+        foreach($this->observer as $k => $v) {
+            if ($v === $observer) unset($this->observer[$k]);
+        }
     }
 
-    public function notify(): never {
+    public function notify() {
         foreach($this->observer as $observer) {
             $observer->update($this->data);
         }
